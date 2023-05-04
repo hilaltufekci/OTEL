@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="MüşteriNo" />
+          </Key>
+          <Property Name="MüşteriNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MüşteriAdi" Type="varchar" MaxLength="50" />
+          <Property Name="Yas" Type="int" />
+          <Property Name="Meslek" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Oteller">
+          <Key>
+            <PropertyRef Name="OtelNo" />
+          </Key>
+          <Property Name="OtelNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OtelAdi" Type="varchar" MaxLength="50" />
+          <Property Name="İl" Type="varchar" MaxLength="50" />
+          <Property Name="Tür" Type="varchar" MaxLength="50" />
+          <Property Name="Yıldızı" Type="int" />
+        </EntityType>
+        <EntityType Name="Subeler">
+          <Key>
+            <PropertyRef Name="SubeNo" />
+          </Key>
+          <Property Name="SubeNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubeAdi" Type="varchar" MaxLength="50" />
+          <Property Name="SubeUlke" Type="varchar" MaxLength="50" />
+          <Property Name="SubeSehir" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Turlar">
+          <Key>
+            <PropertyRef Name="TurNo" />
+          </Key>
+          <Property Name="TurNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TurAdi" Type="varchar" MaxLength="50" />
+          <Property Name="İçerik" Type="varchar" MaxLength="50" />
+          <Property Name="Ulaşım" Type="varchar" MaxLength="50" />
+          <Property Name="KatilimSayisi" Type="int" />
+        </EntityType>
+        <EntityContainer Name="OtelModelStoreContainer">
+          <EntitySet Name="Musteriler" EntityType="Self.Musteriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oteller" EntityType="Self.Oteller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subeler" EntityType="Self.Subeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turlar" EntityType="Self.Turlar" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OtelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Musteriler">
+          <Key>
+            <PropertyRef Name="MüşteriNo" />
+          </Key>
+          <Property Name="MüşteriNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MüşteriAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Yas" Type="Int32" />
+          <Property Name="Meslek" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Oteller">
+          <Key>
+            <PropertyRef Name="OtelNo" />
+          </Key>
+          <Property Name="OtelNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OtelAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="İl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tür" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Yıldızı" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Subeler">
+          <Key>
+            <PropertyRef Name="SubeNo" />
+          </Key>
+          <Property Name="SubeNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubeUlke" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubeSehir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Turlar">
+          <Key>
+            <PropertyRef Name="TurNo" />
+          </Key>
+          <Property Name="TurNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TurAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="İçerik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ulaşım" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KatilimSayisi" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="OtelEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Musterilers" EntityType="Self.Musteriler" />
+          <EntitySet Name="Otellers" EntityType="Self.Oteller" />
+          <EntitySet Name="Subelers" EntityType="Self.Subeler" />
+          <EntitySet Name="Turlars" EntityType="Self.Turlar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OtelModelStoreContainer" CdmEntityContainer="OtelEntities2">
+          <EntitySetMapping Name="Musterilers">
+            <EntityTypeMapping TypeName="OtelModel.Musteriler">
+              <MappingFragment StoreEntitySet="Musteriler">
+                <ScalarProperty Name="MüşteriNo" ColumnName="MüşteriNo" />
+                <ScalarProperty Name="MüşteriAdi" ColumnName="MüşteriAdi" />
+                <ScalarProperty Name="Yas" ColumnName="Yas" />
+                <ScalarProperty Name="Meslek" ColumnName="Meslek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Otellers">
+            <EntityTypeMapping TypeName="OtelModel.Oteller">
+              <MappingFragment StoreEntitySet="Oteller">
+                <ScalarProperty Name="OtelNo" ColumnName="OtelNo" />
+                <ScalarProperty Name="OtelAdi" ColumnName="OtelAdi" />
+                <ScalarProperty Name="İl" ColumnName="İl" />
+                <ScalarProperty Name="Tür" ColumnName="Tür" />
+                <ScalarProperty Name="Yıldızı" ColumnName="Yıldızı" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subelers">
+            <EntityTypeMapping TypeName="OtelModel.Subeler">
+              <MappingFragment StoreEntitySet="Subeler">
+                <ScalarProperty Name="SubeNo" ColumnName="SubeNo" />
+                <ScalarProperty Name="SubeAdi" ColumnName="SubeAdi" />
+                <ScalarProperty Name="SubeUlke" ColumnName="SubeUlke" />
+                <ScalarProperty Name="SubeSehir" ColumnName="SubeSehir" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Turlars">
+            <EntityTypeMapping TypeName="OtelModel.Turlar">
+              <MappingFragment StoreEntitySet="Turlar">
+                <ScalarProperty Name="TurNo" ColumnName="TurNo" />
+                <ScalarProperty Name="TurAdi" ColumnName="TurAdi" />
+                <ScalarProperty Name="İçerik" ColumnName="İçerik" />
+                <ScalarProperty Name="Ulaşım" ColumnName="Ulaşım" />
+                <ScalarProperty Name="KatilimSayisi" ColumnName="KatilimSayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

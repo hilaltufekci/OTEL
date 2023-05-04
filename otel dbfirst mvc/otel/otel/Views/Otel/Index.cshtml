@@ -1,0 +1,51 @@
+﻿@model IEnumerable<otel.Models.Oteller>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni", "Ekle")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OtelAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.İl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tür)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yıldızı)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtelAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.İl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tür)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yıldızı)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle","Edit", new { id = item.OtelNo }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.OtelNo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

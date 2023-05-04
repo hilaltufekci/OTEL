@@ -1,0 +1,57 @@
+﻿@model otel.Models.Subeler
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Sil</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Subeler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SubeAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubeAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubeUlke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubeUlke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubeSehir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubeSehir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Ana Sayfaya Git", "Index")
+        </div>
+    }
+</div>

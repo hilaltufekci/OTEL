@@ -1,0 +1,51 @@
+﻿@model IEnumerable<otel.Models.Turlar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni", "Ekle")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TurAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.İçerik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ulaşım)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KatilimSayisi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.İçerik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulaşım)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KatilimSayisi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.TurNo }, new { @class = "btn btn-warning" })) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.TurNo }, new { @class = "btn btn-danger" }))
+        </td>
+    </tr>
+}
+
+</table>
